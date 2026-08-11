@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Application Form</title>
+  <link rel="stylesheet" href="apply.css">
+</head>
+<body>
+
+  <div class="form-container">
+    <div class="form-header">
+      <h2>Application Form</h2>
+      <p>Please fill out the details below to complete your application.</p>
+    </div>
+
+    <form id="applyForm" novalidate>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="fullName">Full Name *</label>
+          <input type="text" id="fullName" name="fullName" placeholder="John Doe" required>
+          <span class="error-message" id="nameError"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" name="email" placeholder="john@example.com" required>
+          <span class="error-message" id="emailError"></span>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="phone">Phone Number *</label>
+          <input type="tel" id="phone" name="phone" placeholder="+1 234 567 8900" required>
+          <span class="error-message" id="phoneError"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="position">Position Applied For *</label>
+          <select id="position" name="position" required>
+            <option value="" disabled selected>Select position</option>
+            <option value="engineering">Software / Mechanical Engineering</option>
+            <option value="data-entry">Data Entry Operator</option>
+            <option value="design">UI/UX Designer</option>
+            <option value="other">Other</option>
+          </select>
+          <span class="error-message" id="positionError"></span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="resume">Upload Resume / CV (PDF/Doc) *</label>
+        <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
+        <span class="error-message" id="resumeError"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="coverLetter">Cover Letter / Additional Information</label>
+        <textarea id="coverLetter" name="coverLetter" rows="4" placeholder="Tell us a bit about your experience..."></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn">Submit Application</button>
+      <div id="statusMessage" class="status-message"></div>
+    </form>
+  </div>
+
+  <script src="apply.js"></script>
+</body>
+</html>
